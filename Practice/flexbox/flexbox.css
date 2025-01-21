@@ -1,0 +1,24 @@
+.container > div{
+    border: green solid 2px;
+    color: blue;
+    margin: 3px;
+}
+
+.container{
+    height: 500px;
+    border: solid red 3px;
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: column; flex-direction: row-reverse; flex-direction: column-reverse; */
+    /* justify-content: center; justify-content: flex-end; justify-content: flex-start; justify-content: space-evenly; */
+    /* justify-content: space-around; */
+    justify-content: space-between;
+    align-items: baseline;align-items: center; align-items: flex-end;
+    flex-wrap:wrap-reverse;
+
+}
+
+.item2{
+    height: 100px;
+    align-self: flex-end;
+}

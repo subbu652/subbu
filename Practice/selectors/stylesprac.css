@@ -1,0 +1,34 @@
+/* element seletors  */
+h1{
+   color: blue; 
+}
+h2{
+    color: red;
+}
+
+/* universal selector */
+*{
+    font-family: Cambria, Cochin;
+    font-size: 40px;
+    background-color: antiquewhite;
+}
+
+/* class selector */
+.sel{
+    color: chartreuse;
+    font-size: 30px;
+}
+
+/* id selector */
+#select{
+    color: cyan;
+}
+
+/* attribute selector */
+[subbu]{
+    color:orangered;
+}
+
+[raju="sub"]{
+    font-size: 25px;
+}

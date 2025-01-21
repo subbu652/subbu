@@ -1,0 +1,24 @@
+/* desecndent combinator */
+.container p {
+    color: blue;
+}
+
+/* child or direct descendent combinator */
+.container >.child{
+    color: rgb(10, 174, 10);
+}
+
+/* adjacent sibling combinator */
+.sibling-example h2+.adjacent{
+    color: red;
+}
+
+/* general or far sibling combinator */
+.far-sibling-example ~.end{
+    color: purple;
+}
+
+/* challenge task */
+.container span{
+    background-color: yellow;
+}

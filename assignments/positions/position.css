@@ -1,0 +1,50 @@
+.box{
+    width: 900px;
+    height: 600px;
+    border: solid;
+    background-image: url(https://www.gifttonepal.com.au/wp-content/uploads/2017/08/A_fathers_love.jpg);
+    position: relative;
+}
+
+.textarea{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    position: absolute;
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.box1{
+    position:absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.box2{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.box3{
+    position:absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.box4{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 40px;
+    padding: 10px;
+}

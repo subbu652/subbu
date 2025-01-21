@@ -1,0 +1,47 @@
+/* Descentdent combinator */
+.navbar a{
+    color: red;
+}
+
+/* child or direct descendent combinator */
+.navbar >a{
+    color: blue;
+}
+
+/* adjacent sibling combinator */
+h1+p{
+    color:brown;
+}
+
+/* general or far sibling combinator */
+h1~p{
+    color: yellow;
+}
+
+h1~a{
+    color: pink;
+}
+
+/* Dependent combinator */
+h1.color{
+    color: green;
+}
+
+/* Pseudo classes */
+h1:hover{
+    color: blueviolet;
+    background-color: aqua;
+}
+
+input:checked+label{
+    color:rgba(226, 14, 159, 0.865);
+}
+
+/* Pseudo elements */
+h1::before{
+    color: red;
+    content: "*";
+}
+ul li::marker{
+    content: "$";
+}
