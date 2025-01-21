@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo_display.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <section>
+        <div>
+            <nav class="navbar">
+                <div class="navdiv">
+                    <div class="logo"><p>To Do App</p></div>
+                    <ul>
+                        <a id="butt" href="{% url "signout" %}">Logout</a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h2>Add Task:</h2>
+                <input type="text" name="item" placeholder="Enter a task here" required>
+                <input type="date" name="date" required>
+                <button id="but" type="submit">SAVE</button>
+            </form>
+        </div>
+        <div class="anchor">
+            <a href="{% url 'display' %}">All entries</a>
+            <a href="{% url 'started' 'started' %}">Started</a>
+            <a href="{% url 'not_started' 'Not started' %}">Not started</a>
+            <a href="{% url 'completed' 'Completed' %}">Completed</a>
+        </div>
+        <table id="todoTable">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Todo item</th>
+                    <th>Status</th>
+                    <th>Due</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in tasks %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ i.title }}</td>
+                    <td>{{ i.status }}</td>
+                    <td>{{ i.due_date }}</td>
+                    <td>
+                        <a id="edit-button" href="{% url 'edit' i.id %}">EDIT</a>
+                        <a id="remove-button" href="{% url 'remove' i.id %}">DELETE</a>
+                        <a id="finish-button" href="{% url 'finish' i.id %}">FINISH</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#todoTable').DataTable();
+        });
+    </script>
+</body>
+</html>

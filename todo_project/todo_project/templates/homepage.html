@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+</head>
+<body>
+    <section>
+        {% comment %} {% include "navbar.html" %} {% endcomment %}
+        <div>
+            <h1>TaskCanvas</h1>
+        </div>
+        <div>
+            <p>Paint Your Day with Productivity.</p>
+        </div>
+        <div>
+            <a href="{% url 'signup' %}"><button>SIGNUP</button></a>
+            <a href="{% url 'signin' %}"><button>SIGNIN</button></a>
+        </div>
+    </section>
+</body>
+</html>

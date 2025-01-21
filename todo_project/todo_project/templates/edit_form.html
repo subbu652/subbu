@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'edit_form.css' %}">
+</head>
+<body>
+    <section>
+        <div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div><h2>Edit</h2></div>
+                <div>
+                    <input type="text" name="item" placeholder="Enter a task here" value="{{data.title}}">
+                    <input type="text" name="status" placeholder="Enter status of Course" value="{{data.status}}">
+                    <input type="date" name="date" value="{{data.due_date|date:'Y-m-d' }}">
+                    <button type="submit">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
