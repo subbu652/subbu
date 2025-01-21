@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Details</title>
+    <link rel="stylesheet" href="/static/css/weather_display.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+        {% include 'navbar.html' %}
+    </div>
+    <div class="section">
+        <div class="section1">
+            <div class="div-1">
+                <h2>{{ city }} ({{ today_forecast.date }})</h2>
+                <div>Sunrise: {{ sunrise }}</div>
+                <div>Sunset: {{ sunset }}</div>
+            </div>
+            <div class="div-1">
+                <div>Temperature: {{ today_forecast.main.temp }}°C</div>
+                <div>Wind: {{ today_forecast.wind.speed }} M/S</div>
+                <div>Humidity: {{ today_forecast.main.humidity }}%</div>
+            </div>
+            <div class="icon">
+                <img src="https://openweathermap.org/img/wn/{{ today_forecast.weather.0.icon }}@4x.png" alt="weather-icon">
+                <div>{{ today_forecast.weather.0.description }}</div>
+            </div>
+        </div>
+        <div class="section2">
+            <h2>Next 5-Day Forecast</h2>
+            <ul class="un-list">
+                {% for forecast in weather_data %}
+                <li class="list">
+                    <h3>{{ forecast.date }}</h3>
+                    <img src="https://openweathermap.org/img/wn/{{ forecast.weather.0.icon }}@4x.png" alt="weather-icon">
+                    <div>Sunrise: {{ sunrise }}</div>
+                    <div>Sunset: {{ sunset }}</div>
+                    <div>Temp: {{ forecast.main.temp }}°C</div>
+                    <div>Wind: {{ forecast.wind.speed }} M/S</div>
+                    <div>Humidity: {{ forecast.main.humidity }}%</div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

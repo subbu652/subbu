@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Search</title>
+    <link rel="stylesheet" href="/static/css/weather_search.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/javascript/weather_search.js" defer></script>
+</head>
+<body>
+    <div>
+        {% include 'navbar.html' %}
+    </div>
+    <div class="container">
+        <div class="section">
+            <h1>Weather Search</h1>
+            <div class="div1">
+                <label for="ab">Enter a Location to Search :</label>
+                <input id ="ab" class="inpt" type="text" placeholder="E.g., India, New York, London">
+                <button class="btn1">Search</button>
+            </div>
+            <div>
+                <p>(or)</p>
+            </div>
+            <div class="div2">
+                <button class="btn2">Use Current Location</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

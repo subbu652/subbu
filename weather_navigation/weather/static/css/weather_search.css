@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(4, 139, 139);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  margin-top: 10%;
+  padding: 2%;
+}
+
+h1 {
+  text-align: center;
+  color: #0f1b84;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem); 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(218, 200, 200, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.section {
+  width: 100%;
+}
+
+.div1, .div2 {
+  margin: 1.5rem 0;
+}
+
+label {
+  color: #1a1919;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: bold;
+  font-size: clamp(1rem, 1.5vw, 1.5rem); 
+}
+
+.inpt {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+}
+
+.btn1, .btn2 {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: rgb(2, 189, 2);
+  color: #ffffff;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn1:hover, .btn2:hover {
+  background: rgb(14, 138, 14);
+  transform: scale(1.05);
+}
+
+p {
+  margin: 0;
+  color: black;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+}
+
+@media (max-width: 1024px) {
+  body {
+    margin-top: 5%;
+    padding: 5%;
+  }
+
+  .container {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .inpt, .btn1, .btn2 {
+    padding: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-top: 5%;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  label {
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
+  }
+
+  .inpt {
+    padding: 0.7rem;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+  }
+
+  .btn1, .btn2 {
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0; 
+  }
+
+  h1 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    margin-top: 20px; 
+  }
+
+  .container {
+    margin-top: 150px; 
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  label {
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+  }
+
+  .inpt, .btn1, .btn2 {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+    margin-left: 3px;
+  }
+
+  p {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+  }
+}
