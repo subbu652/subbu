@@ -3,11 +3,11 @@ import requests
 from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import SigninTable
 
-@login_required(login_url='signin')
+def homepage(request):
+    return render(request, 'homepage.html')
+
 def search(request):
     return render(request, 'weather_search.html')
 
@@ -27,7 +27,6 @@ def fetching(latitude, longitude):
         }
     except requests.exceptions.RequestException:
         return None
-
 
 def weather_data(request):
     city = request.GET.get('city')
@@ -69,15 +68,14 @@ def signin(request):
         user = authenticate(request,username=username,password=password)
         if user is not None:
             login(request, user)
-            SigninTable.objects.create(user_name=username)
-            return redirect('weather_data')
+            return redirect('search')
         messages.error(request,'Invalid Credentials')
         return redirect('signin')
     return render(request,'signin.html')
 
 def signout(request):
     logout(request)
-    return redirect('signin')
+    return redirect('homepage')
 
 def signup(request):
     if request.method == "POST":
